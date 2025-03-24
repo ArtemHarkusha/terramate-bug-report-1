@@ -1,8 +1,7 @@
 locals {
     gitlab_users = merge([
-        for f in fileset("../../config/", "*.yml") : {
-        for m in yamldecode(file("../../config/${f}")) : u
-        }
+        for f in fileset("../../config/", "*.yml") : 
+            yamldecode(file("../../config/${f}"))
     ]...)
     yml = yamldecode(file("../../config/first.yml"))
 }

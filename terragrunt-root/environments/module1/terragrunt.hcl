@@ -1,5 +1,5 @@
 locals {
-    gitlab_users = merge([
+    mock_output = merge([
         for f in fileset("../../config/", "*.yml") : 
             yamldecode(file("../../config/${f}"))
     ]...)
